@@ -18,11 +18,18 @@ WeVocalシリーズの紹介ページですえ(ﾟ∀ﾟ)
 - WeVocalConverter
 - WeVocalAnalyzer
 - WeVocal Studio (こいつだけ半角スペースがいるのでなかったら私が悲しみます)
+- WeVocal Plugin Packages
 
 ## ビルド
 ```bash
 php build.php
+
+# OR
+
+todo build
 ```
+
+`todo build` は Todofile が必要！KWSKは [ここ](https://github.com/Pitan76/Todofile)
 
 index.php をテンプレートとして index.html として出力されます！<br />
 (定数とかはbuild.phpに入れてる)
