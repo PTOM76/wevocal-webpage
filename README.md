@@ -14,10 +14,10 @@ WeVocalシリーズの紹介ページですえ(ﾟ∀ﾟ)
 
 ## 以下の成分が含まれていますご注意ください
 - WeVocalSynth
+- WeVocal Studio (こいつだけ半角スペースがいるのでなかったら私が悲しみます)
 - WeVocalExtractor
 - WeVocalConverter
 - WeVocalAnalyzer
-- WeVocal Studio (こいつだけ半角スペースがいるのでなかったら私が悲しみます)
 - WeVocal Plugin Packages
 
 ## ビルド
