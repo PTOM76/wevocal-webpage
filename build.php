@@ -1,9 +1,10 @@
 <?php
-
+// お知らせ
 const NOTICE = [
     "2026/10/09" => "WeVocal Studioを公開！",
 ];
 
+// プロジェクトに関する情報
 const PROJECTS = [
     'wevocalstudio' => [
         'title' => 'WeVocal Studio',
@@ -65,10 +66,27 @@ const PROJECTS = [
     ],
 ];
 
-global $mainProjects, $subProjects;
-$mainProjects = array_filter(PROJECTS, fn($info) => $info['type'] === 'main');
-$subProjects = array_filter(PROJECTS, fn($info) => $info['type'] === 'sub');
+// 文字列をHTMLエスケープする関数
+$htmlsc = fn (string $str): string => htmlspecialchars($str, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
+// 配列の文字列を再帰的にHTMLエスケープする関数
+$escapeArray = function (array $data) use (&$escapeArray, $htmlsc): array {
+    foreach ($data as $key => $value) {
+        if (is_array($value)) {
+            $data[$key] = $escapeArray($value);
+        } elseif (is_string($value)) {
+            $data[$key] = $htmlsc($value);
+        }
+    }
+
+    return $data;
+};
+
+// mainとsubでわける
+$mainProjects = $escapeArray(array_filter(PROJECTS, fn($info) => $info['type'] === 'main'));
+$subProjects = $escapeArray(array_filter(PROJECTS, fn($info) => $info['type'] === 'sub'));
+
+// SSG
 ob_start();
 include __DIR__ . '/index.php';
 $html = ob_get_clean();

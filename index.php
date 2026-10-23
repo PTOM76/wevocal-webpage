@@ -1,5 +1,7 @@
 <?php
-	global $mainProjects, $subProjects;
+// うちのVSCode君が未定義ってわがままを言うのでおまじない(PHPDoc)でエラーをお清め
+/** @var array $mainProjects */
+/** @var array $subProjects */
 ?>
 <!DOCTYPE HTML>
 <html lang="ja">
@@ -30,17 +32,17 @@ foreach (NOTICE as $date => $msg)
 		} else { 
 			?> | ウィキ (工事中) <?php 
 		} ?>
-<?php if ($info['image']) { ?>
+<?php   if ($info['image']) { ?>
 
 		<br />
 		<img width="400" src="<?= $info['image'] ?>" />
-<?php } ?>
+<?php   } ?>
 
-<?php } ?>
+<?php   } ?>
 		<details>
 			<summary>その他ツールなど</summary>
 
-<?php foreach ($subProjects as $id => $info) { ?>
+<?php   foreach ($subProjects as $id => $info) { ?>
 			<h2 id="<?= $id ?>">『<?= $info['title'] ?>』 <?= $info['icon'] ? '<img width="18" src="' . $info['icon'] . '" />' : '' ?></h2>
 			<?= $info['description'] ?><br />
 			◯ <a href="<?= $info['url'] ?>" target="_blank">アプリを開く</a><?php
@@ -49,12 +51,12 @@ foreach (NOTICE as $date => $msg)
 			} else { 
 				?> | ウィキ (工事中) <?php 
 			} ?>
-<?php if ($info['image']) { ?>
+<?php       if ($info['image']) { ?>
 			<br />
 			<img width="400" src="<?= $info['image'] ?>" />
-<?php } ?>
+<?php       } ?>
 
-<?php } ?>
+<?php   } ?>
 		</details>
 		
 		<br /><br />
