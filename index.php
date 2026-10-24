@@ -61,7 +61,7 @@ foreach (NOTICE as $date => $msg)
 		
 		<br /><br />
 		<hr />
-		調理人: <a href="https://www.pitan76.net/" target="_blank">管理者のお部屋</a> (PITAN76.NET) - 2026
+		調理人: <a href="https://www.pitan76.net/" target="_blank">管理者のお部屋</a> (PITAN76.NET) - 2026 | Powered by PHP
 
 	</body>
 </html>
